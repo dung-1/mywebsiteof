@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin QLSP</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles-Amin2.css">
+    <link rel="stylesheet" href="css/styles-admin.css">
+    <link rel="stylesheet" href="css/style-admin.css">
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <div class="searchBar">
+                    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
+                    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                      <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                      </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="header-right" style="margin-left: 80%;">
+                <span class="material-icons-outlined"><img src="img/IMG_20220504_054035 (1).jpg" alt="" width="70%" style="border-radius: 50%;">
+                </span>
+                <br>
+                <b style="padding-left: 13px;">ADMIN</b>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">inventory</span> ADMIN - MENU
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="Admin-TrangChu.html"> <span class="material-icons-outlined">dashboard</span>BẢNG MENU
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Admin-Qlsp.html"><span class="material-icons-outlined">inventory_2</span> Quản Lý Sản Phẩm</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Admin-Qldh.html"><span class="material-icons-outlined">add_shopping_cart</span> Quản Lý Đơn Hàng</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Admin-Qlkh.html"> <span class="material-icons-outlined">people_outline</span> Quản Lý Khách Hàng </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#"> <span class="material-icons-outlined">money</span> Thu Nhập </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#"><span class="material-icons-outlined">account_circle</span> Tài Khoản</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#"> <span class="material-icons-outlined">settings</span> Đăng Xuất</a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">BẢNG MENU</p>
+            </div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-dark">SẢN PHẨM</p>
+                        <span class="material-icons-outlined text-blue">inventory_2</span>
+                    </div>
+                    <span class="text-dark font-weight-bold " id="count_product"></span>
+                </div>
+
+                <div class="card bg-secondary ">
+                    <div class="card-inner">
+                        <p class="text-dark">ĐƠN HÀNG</p>
+                        <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+                    </div>
+                    <span class="text-dark font-weight-bold">2</span>
+                </div>
+
+                <div class="card bg-warning">
+                    <div class="card-inner">
+                        <p class="text-dark">KHÁCH HÀNG</p>
+                        <span class="material-icons-outlined text-green">people_outline</span>
+                    </div>
+                    <span class="text-dark font-weight-bold">3</span>
+                </div>
+
+                <div class="card bg-primary">
+                    <div class="card-inner">
+                        <p class="text-dark">THU NHẬP</p>
+                        <span class="material-icons-outlined text-red">money</span>
+                    </div>
+                    <span class="text-dark font-weight-bold"></span>
+                    <span class="total-cart total"></span>
+                </div>
+            </div>
+
+            <div class="content-pro-par container">
+                <div class="pro-table" style="    width: 100%;
+                background-color: #fff;
+                box-shadow: 10px 10px 20px #bbb;
+                padding: 15px;
+  
+            ">
+                    <div class="recent-project">
+                        <div class=" see-all ">
+                            <button style="margin-left: 35%;border: none ;  margin-bottom:  2%; background: none; font-size: 25px;font-weight: bold;">QUẢN LÝ ĐƠN HÀNG</button>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                    <div id="layoutSidenav_content">
+                        <div class="product">
+                            <p></p>
+                            <table class="table">
+                                <thead class="thead-light text-center">
+                                    <tr>
+                                        <th>ID ĐƠN</th>
+                                        <th>TỔNG</th>
+                                        <th>KHÁCH HÀNG</th>
+                                        <th>Điện Thoại </th>
+                                        <th>Email</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Trạng Thái</th>
+                                        <th>Chỉnh sửa</th>
+                                    </tr>
+
+                                </thead>
+                                <tr>
+                                    <td>ID1</td>
+                                    <td>10000</td>
+                                    <td>NGUYEN VĂN DỤNG</td>
+                                    <td>0238745398</td>
+                                    <td>dunga@gmail.com</td>
+                                    <td>NGHỆ AN</td>
+                                    <td>ĐANG XỬ LÝ</td>
+                                    <th> <button class="btn btn-outline-danger"><i class="fas fa-cogs  "></i></button> <button class="btn btn-outline-warning"><i class="fas fa-trash "></i></button></th>
+                                </tr>
+                                <tr>
+                                    <td>ID2</td>
+                                    <td>45000</td>
+                                    <td>HOÀNG KHÁNH</td>
+                                    <td>0946593754</td>
+                                    <td>linha@gmail.com</td>
+                                    <td>HA NOI</td>
+                                    <td>ĐANG XỬ LÝ</td>
+                                    <th> <button class="btn btn-outline-danger"><i class="fas fa-cogs  "></i></button> <button class="btn btn-outline-warning"><i class="fas fa-trash "></i></button></th>
+                                </tr>
+                                <tbody class="text-center" id="order-review"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="clear"></div>
+            </div>
+
+        </main>
+        <!-- End Main -->
+        </Section>
+        <div class="clear"></div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/external.js"></script>
+        <script src="grocery website/js/script.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/giohang.js"></script>
+
+
+    <!-- Custom JS -->
+</body>
+
+</html>

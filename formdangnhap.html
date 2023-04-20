@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>ĐÂNG NHẬP</title>
+    <link rel="stylesheet" href="css/style-formdk.css">
+
+</head>
+
+<body style="    background-image: url(img/background-tra-sua-hoat-hinh-ve-nen-xanh-duong.jpg);
+">
+
+
+    <div class="register">
+        <h1>Đăng Nhập</h1>
+        <input type="text" placeholder="VD: NguyenVan Dung" name="username1" id="username1" required>
+        <i class="user" data-feather="user"></i>
+
+
+        <input type="password" placeholder="************" name="password1" id="password1" required>
+        <div class="password-icon">
+            <i data-feather="eye"></i>
+            <i class="eye-off" data-feather="eye-off"></i>
+        </div>
+        <div style="transform: translateX(56%);margin-bottom: 10px;">Quên Mật Khẩu ?</div>
+        <button type="submit" class="submit" onclick="return validata2()">Đăng nhập</button>
+
+        <div class=" sign ">
+            Hoặc đăng nhập qua
+
+        </div>
+        <div class="row " style="display: flex;">
+            <button class="col"><i class="fa-brands fa-facebook"></i> Facebook </button>
+            <button class="col"><i class="fa-brands fa-google"></i> Google </button>
+        </div>
+        <div class=" login">
+            <p>Quý khách chưa có tài khoản <a href="formdangky1.html">Đăng Ký Ngay</a>.</p>
+        </div>
+    </div>
+    <div class="bottom" style="margin:  10%;"></div>
+    <script language="javascript" src="js/formdk1.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        const eye = document.querySelector(".feather-eye");
+        const eyeoff = document.querySelector(".feather-eye-off");
+        const passwordField = document.querySelector("input[type=password]");
+
+        eye.addEventListener("click", () => {
+            eye.style.display = "none";
+            eyeoff.style.display = "block";
+
+            passwordField.type = "text";
+        });
+
+        eyeoff.addEventListener("click", () => {
+            eyeoff.style.display = "none";
+            eye.style.display = "block";
+
+            passwordField.type = "password";
+        });
+    </script>
+</body>
+
+</html>
